@@ -24,17 +24,19 @@ PluginComponent {
     readonly property int agendaDays: Math.max(1, pluginData.agendaDays ?? 7)
     readonly property var sourcePalette: [Theme.primary, Theme.tertiary, Theme.secondary, Theme.error, Theme.success]
 
+    readonly property string timePattern: SettingsData.use24HourClock ? "hh:mm" : "hh:mm AP"
+
     readonly property string barLabel: {
         if (barDisplay === "icon")
             return "";
         if (barDisplay === "next") {
             const upcoming = Ics.nextEvents(events, Date.now(), 1);
             if (upcoming.length === 0)
-                return I18n.tr("No events");
+                return I18n.trFor("naviCalendar", "No events");
             const ev = upcoming[0];
             if (ev.allDay)
-                return ev.summary || I18n.tr("All day");
-            return new Date(ev.start).toLocaleTimeString(I18n.locale(), "hh:mm") + " " + (ev.summary || I18n.tr("Untitled"));
+                return ev.summary || I18n.trFor("naviCalendar", "All day");
+            return new Date(ev.start).toLocaleTimeString(I18n.locale(), timePattern) + " " + (ev.summary || I18n.trFor("naviCalendar", "Untitled"));
         }
         return clock.date.toLocaleDateString(I18n.locale(), "d MMM");
     }
@@ -186,7 +188,7 @@ PluginComponent {
         PopoutComponent {
             id: pop
 
-            headerText: I18n.tr("Calendar")
+            headerText: I18n.trFor("naviCalendar", "Calendar")
 
             Row {
                 id: navRow

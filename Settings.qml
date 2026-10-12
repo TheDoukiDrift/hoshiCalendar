@@ -8,6 +8,10 @@ PluginSettings {
     id: root
     pluginId: "naviCalendar"
 
+    function t(term) {
+        return I18n.trFor("naviCalendar", term);
+    }
+
     function addSources(paths) {
         if (!sourceList)
             return;
@@ -29,7 +33,7 @@ PluginSettings {
 
     StyledText {
         width: parent.width
-        text: I18n.tr("Calendar sources")
+        text: root.t("Calendar sources")
         font.pixelSize: Theme.fontSizeLarge
         font.weight: Theme.fontWeightMedium
         color: Theme.surfaceText
@@ -37,7 +41,7 @@ PluginSettings {
 
     StyledText {
         width: parent.width
-        text: I18n.tr("Add local .ics files or remote feeds (http://, https://, webcal://). Remote feeds are refreshed on the interval below.")
+        text: root.t("Add local .ics files or remote feeds (http://, https://, webcal://). Remote feeds are refreshed on the interval below.")
         font.pixelSize: Theme.fontSizeSmall
         color: Theme.surfaceVariantText
         wrapMode: Text.WordWrap
@@ -46,21 +50,21 @@ PluginSettings {
     ListSettingWithInput {
         id: sourceList
         settingKey: "sources"
-        label: I18n.tr("Sources")
-        description: I18n.tr("Path to a .ics file or a subscription URL")
+        label: root.t("Sources")
+        description: root.t("Path to a .ics file or a subscription URL")
         defaultValue: []
         fields: [
             {
                 id: "source",
-                label: I18n.tr("Path or URL"),
+                label: root.t("Path or URL"),
                 placeholder: "/home/me/calendar.ics  or  https://example.com/cal.ics",
                 width: 320,
                 required: true
             },
             {
                 id: "name",
-                label: I18n.tr("Label"),
-                placeholder: I18n.tr("Personal"),
+                label: root.t("Label"),
+                placeholder: "Personal",
                 width: 160
             }
         ]
@@ -70,7 +74,7 @@ PluginSettings {
         spacing: Theme.spacingM
 
         DButton {
-            text: I18n.tr("Add .ics file…")
+            text: root.t("Add .ics file…")
             iconName: "folder_open"
             onClicked: icsBrowser.open()
         }
@@ -79,7 +83,7 @@ PluginSettings {
     FileBrowserModal {
         id: icsBrowser
 
-        browserTitle: I18n.tr("Select .ics file")
+        browserTitle: root.t("Select .ics file")
         browserIcon: "calendar_month"
         bucket: "generic"
         multiple: true
@@ -89,7 +93,7 @@ PluginSettings {
 
     StyledText {
         width: parent.width
-        text: I18n.tr("Behaviour")
+        text: root.t("Behaviour")
         font.pixelSize: Theme.fontSizeLarge
         font.weight: Theme.fontWeightMedium
         color: Theme.surfaceText
@@ -98,67 +102,67 @@ PluginSettings {
 
     SelectionSetting {
         settingKey: "barDisplay"
-        label: I18n.tr("Bar widget shows")
-        description: I18n.tr("What the bar pill displays")
+        label: root.t("Bar widget shows")
+        description: root.t("What the bar pill displays")
         options: [
-            { label: I18n.tr("Date"), value: "date" },
-            { label: I18n.tr("Next event"), value: "next" },
-            { label: I18n.tr("Icon only"), value: "icon" }
+            { label: root.t("Date"), value: "date" },
+            { label: root.t("Next event"), value: "next" },
+            { label: root.t("Icon only"), value: "icon" }
         ]
         defaultValue: "date"
     }
 
     SelectionSetting {
         settingKey: "desktopLayout"
-        label: I18n.tr("Desktop widget layout")
+        label: root.t("Desktop widget layout")
         options: [
-            { label: I18n.tr("Month + agenda"), value: "stacked" },
-            { label: I18n.tr("Month only"), value: "month" },
-            { label: I18n.tr("Agenda only"), value: "agenda" }
+            { label: root.t("Month + agenda"), value: "stacked" },
+            { label: root.t("Month only"), value: "month" },
+            { label: root.t("Agenda only"), value: "agenda" }
         ]
         defaultValue: "stacked"
     }
 
     SliderSetting {
         settingKey: "agendaDays"
-        label: I18n.tr("Agenda days")
-        description: I18n.tr("How many days ahead the agenda lists")
+        label: root.t("Agenda days")
+        description: root.t("How many days ahead the agenda lists")
         defaultValue: 7
         minimum: 1
         maximum: 30
-        unit: I18n.tr("d")
+        unit: root.t("d")
     }
 
     SelectionSetting {
         settingKey: "weekStart"
-        label: I18n.tr("First day of week")
+        label: root.t("First day of week")
         options: [
-            { label: I18n.tr("Monday"), value: "1" },
-            { label: I18n.tr("Sunday"), value: "0" }
+            { label: root.t("Monday"), value: "1" },
+            { label: root.t("Sunday"), value: "0" }
         ]
         defaultValue: "1"
     }
 
     ToggleSetting {
         settingKey: "showEventDots"
-        label: I18n.tr("Show event markers")
-        description: I18n.tr("Dots on days that have events")
+        label: root.t("Show event markers")
+        description: root.t("Dots on days that have events")
         defaultValue: true
     }
 
     SliderSetting {
         settingKey: "refreshMinutes"
-        label: I18n.tr("Remote refresh interval")
-        description: I18n.tr("0 disables automatic refresh")
+        label: root.t("Remote refresh interval")
+        description: root.t("0 disables automatic refresh")
         defaultValue: 60
         minimum: 0
         maximum: 720
-        unit: I18n.tr("min")
+        unit: root.t("min")
     }
 
     SliderSetting {
         settingKey: "backgroundOpacity"
-        label: I18n.tr("Desktop background opacity")
+        label: root.t("Desktop background opacity")
         defaultValue: 60
         minimum: 0
         maximum: 100

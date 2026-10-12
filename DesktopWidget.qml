@@ -264,7 +264,7 @@ DesktopPluginComponent {
         anchors.bottom: parent.bottom
         anchors.margins: Theme.spacingS
         visible: root.errors.length > 0
-        text: I18n.tr("%1 source(s) failed").arg(root.errors.length)
+        text: I18n.trFor("naviCalendar", "%1 source(s) failed").arg(root.errors.length)
         color: Theme.error
         font.pixelSize: Theme.fontSizeSmall
         horizontalAlignment: Text.AlignHCenter
