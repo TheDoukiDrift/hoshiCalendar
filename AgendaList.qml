@@ -56,15 +56,15 @@ Flickable {
     function dayLabel(dayMs) {
         const todayMs = Ics.startOfDayMs(Date.now());
         if (dayMs === todayMs)
-            return I18n.trFor("naviCalendar", "Today");
+            return I18n.trFor("hoshiCalendar", "Today");
         if (dayMs === Ics.addDays(todayMs, 1))
-            return I18n.trFor("naviCalendar", "Tomorrow");
+            return I18n.trFor("hoshiCalendar", "Tomorrow");
         return new Date(dayMs).toLocaleDateString(I18n.locale(), "ddd, d MMM");
     }
 
     function timeLabel(ev) {
         if (ev.allDay)
-            return I18n.trFor("naviCalendar", "All day");
+            return I18n.trFor("hoshiCalendar", "All day");
         const start = new Date(ev.start);
         const startText = start.toLocaleTimeString(I18n.locale(), timePattern);
         if (ev.end <= ev.start)
@@ -136,7 +136,7 @@ Flickable {
                         StyledText {
                             id: accTitle
                             width: parent.width
-                            text: (row.modelData.ev && row.modelData.ev.summary) || I18n.trFor("naviCalendar", "Untitled")
+                            text: (row.modelData.ev && row.modelData.ev.summary) || I18n.trFor("hoshiCalendar", "Untitled")
                             color: root.titleColor
                             font.pixelSize: Theme.fontSizeMedium
                             elide: Text.ElideRight
@@ -154,7 +154,7 @@ Flickable {
                                 if (ev.location)
                                     meta += " · " + ev.location;
                                 if (ev.recurring)
-                                    meta += " · " + I18n.trFor("naviCalendar", "repeats");
+                                    meta += " · " + I18n.trFor("hoshiCalendar", "repeats");
                                 return meta;
                             }
                             color: root.mutedColor
@@ -169,7 +169,7 @@ Flickable {
         StyledText {
             width: parent.width
             visible: root.rows.length === 0
-            text: I18n.trFor("naviCalendar", "No events")
+            text: I18n.trFor("hoshiCalendar", "No events")
             color: root.mutedColor
             font.pixelSize: Theme.fontSizeSmall
             horizontalAlignment: Text.AlignHCenter

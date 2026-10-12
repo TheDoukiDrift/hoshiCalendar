@@ -110,7 +110,7 @@ Item {
             _finish(index, gen, null, "unsupported source");
             return;
         }
-        Proc.runCommand("naviCalendar.load." + gen + "." + index, spec.cmd, (stdout, exitCode) => {
+        Proc.runCommand("hoshiCalendar.load." + gen + "." + index, spec.cmd, (stdout, exitCode) => {
             if (gen !== root._gen)
                 return;
             if (exitCode === 0)

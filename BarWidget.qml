@@ -32,11 +32,11 @@ PluginComponent {
         if (barDisplay === "next") {
             const upcoming = Ics.nextEvents(events, Date.now(), 1);
             if (upcoming.length === 0)
-                return I18n.trFor("naviCalendar", "No events");
+                return I18n.trFor("hoshiCalendar", "No events");
             const ev = upcoming[0];
             if (ev.allDay)
-                return ev.summary || I18n.trFor("naviCalendar", "All day");
-            return new Date(ev.start).toLocaleTimeString(I18n.locale(), timePattern) + " " + (ev.summary || I18n.trFor("naviCalendar", "Untitled"));
+                return ev.summary || I18n.trFor("hoshiCalendar", "All day");
+            return new Date(ev.start).toLocaleTimeString(I18n.locale(), timePattern) + " " + (ev.summary || I18n.trFor("hoshiCalendar", "Untitled"));
         }
         return clock.date.toLocaleDateString(I18n.locale(), "d MMM");
     }
@@ -188,7 +188,7 @@ PluginComponent {
         PopoutComponent {
             id: pop
 
-            headerText: I18n.trFor("naviCalendar", "Calendar")
+            headerText: I18n.trFor("hoshiCalendar", "Calendar")
 
             Row {
                 id: navRow

@@ -1,6 +1,6 @@
 .pragma library
 
-// Minimal iCalendar (.ics) reader for Navi Calendar.
+// Minimal iCalendar (.ics) reader for Hoshi Calendar.
 // Only single VEVENTs are handled. RRULE is not expanded: a recurring event is
 // reported once, at its DTSTART, with `recurring` set to true.
 

@@ -6,10 +6,10 @@ import qs.Modules.Plugins
 
 PluginSettings {
     id: root
-    pluginId: "naviCalendar"
+    pluginId: "hoshiCalendar"
 
     function t(term) {
-        return I18n.trFor("naviCalendar", term);
+        return I18n.trFor("hoshiCalendar", term);
     }
 
     function addSources(paths) {

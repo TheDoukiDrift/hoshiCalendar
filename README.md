@@ -1,4 +1,6 @@
-# Navi Calendar
+# Hoshi Calendar
+
+[![WARN-LLM GENERATED](https://img.shields.io/badge/WARN-LLM%20GENERATED-FF6347)](https://github.com/40ants/ai-badges)
 
 A [DankMaterialShell](https://github.com/AvengeMedia/DankMaterialShell) plugin that adds a
 **desktop widget** and a **bar widget** for calendars stored as `.ics` (iCalendar) files.
@@ -30,16 +32,16 @@ single daemon does all the work regardless of how many widgets are on screen.
 Copy this directory into your DMS plugins folder, then scan:
 
 ```sh
-cp -r naviCalendar ~/.config/DankMaterialShell/plugins/
+cp -r hoshiCalendar ~/.config/DankMaterialShell/plugins/
 dms ipc plugin-scan scan
 ```
 
-Then enable **Navi Calendar** in *Settings → Plugins*, add it to a DankBar section and/or
+Then enable **Hoshi Calendar** in *Settings → Plugins*, add it to a DankBar section and/or
 place the desktop widget from the desktop edit mode.
 
 ## Configure
 
-In *Settings → Plugins → Navi Calendar*:
+In *Settings → Plugins → Hoshi Calendar*:
 
 - **Sources** — click **Add .ics file…** to pick local calendars with the built-in file
   browser, or type a path (`/home/me/calendar.ics`) / URL (`https://…` or `webcal://…`)
@@ -65,7 +67,7 @@ In *Settings → Plugins → Navi Calendar*:
 
 ## Localization
 
-UI strings go through `I18n.trFor("naviCalendar", …)`, so they follow the DMS language setting.
+UI strings go through `I18n.trFor("hoshiCalendar", …)`, so they follow the DMS language setting.
 Dates, weekday and month names use the DMS locale, and clock times follow the DMS
 12/24-hour setting. The plugin ships a Russian translation (`translations/ru.json`);
 English is the source language, so no `en.json` is needed.
