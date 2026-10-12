@@ -61,6 +61,14 @@ In *Settings → Plugins → Navi Calendar*:
 | `DesktopWidget.qml` | desktop | Month grid + agenda |
 | `AgendaList.qml` | — | Shared agenda list |
 | `Settings.qml` | — | Settings UI |
+| `translations/*.json` | — | UI translations (English is the source) |
+
+## Localization
+
+UI strings go through `I18n.trFor("naviCalendar", …)`, so they follow the DMS language setting.
+Dates, weekday and month names use the DMS locale, and clock times follow the DMS
+12/24-hour setting. The plugin ships a Russian translation (`translations/ru.json`);
+English is the source language, so no `en.json` is needed.
 
 ## Limitations
 

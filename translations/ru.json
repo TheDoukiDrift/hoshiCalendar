@@ -1,0 +1,116 @@
+{
+  "%1 source(s) failed": {
+    "%1 source(s) failed": "Не удалось загрузить источников: %1"
+  },
+  "Add .ics file…": {
+    "Add .ics file…": "Добавить файл .ics…"
+  },
+  "Add local .ics files or remote feeds (http://, https://, webcal://). Remote feeds are refreshed on the interval below.": {
+    "Add local .ics files or remote feeds (http://, https://, webcal://). Remote feeds are refreshed on the interval below.": "Добавьте локальные файлы .ics или удалённые ленты (http://, https://, webcal://). Удалённые ленты обновляются с интервалом ниже."
+  },
+  "Agenda days": {
+    "Agenda days": "Дней в повестке"
+  },
+  "Agenda only": {
+    "Agenda only": "Только повестка"
+  },
+  "All day": {
+    "All day": "Весь день"
+  },
+  "Bar widget shows": {
+    "Bar widget shows": "Что показывает виджет в баре"
+  },
+  "Behaviour": {
+    "Behaviour": "Поведение"
+  },
+  "Calendar": {
+    "Calendar": "Календарь"
+  },
+  "Calendar sources": {
+    "Calendar sources": "Источники календаря"
+  },
+  "Date": {
+    "Date": "Дата"
+  },
+  "Desktop background opacity": {
+    "Desktop background opacity": "Прозрачность фона на рабочем столе"
+  },
+  "Desktop widget layout": {
+    "Desktop widget layout": "Раскладка виджета на рабочем столе"
+  },
+  "Dots on days that have events": {
+    "Dots on days that have events": "Точки на днях с событиями"
+  },
+  "First day of week": {
+    "First day of week": "Первый день недели"
+  },
+  "How many days ahead the agenda lists": {
+    "How many days ahead the agenda lists": "На сколько дней вперёд показывает повестка"
+  },
+  "Icon only": {
+    "Icon only": "Только иконка"
+  },
+  "Label": {
+    "Label": "Название"
+  },
+  "Monday": {
+    "Monday": "Понедельник"
+  },
+  "Month + agenda": {
+    "Month + agenda": "Месяц + повестка"
+  },
+  "Month only": {
+    "Month only": "Только месяц"
+  },
+  "Next event": {
+    "Next event": "Ближайшее событие"
+  },
+  "No events": {
+    "No events": "Нет событий"
+  },
+  "Path or URL": {
+    "Path or URL": "Путь или URL"
+  },
+  "Path to a .ics file or a subscription URL": {
+    "Path to a .ics file or a subscription URL": "Путь к файлу .ics или URL подписки"
+  },
+  "Remote refresh interval": {
+    "Remote refresh interval": "Интервал обновления удалённых лент"
+  },
+  "Select .ics file": {
+    "Select .ics file": "Выбор файла .ics"
+  },
+  "Show event markers": {
+    "Show event markers": "Показывать отметки событий"
+  },
+  "Sources": {
+    "Sources": "Источники"
+  },
+  "Sunday": {
+    "Sunday": "Воскресенье"
+  },
+  "Today": {
+    "Today": "Сегодня"
+  },
+  "Tomorrow": {
+    "Tomorrow": "Завтра"
+  },
+  "Untitled": {
+    "Untitled": "Без названия"
+  },
+  "What the bar pill displays": {
+    "What the bar pill displays": "Что отображает пилюля в баре"
+  },
+  "d": {
+    "d": "д"
+  },
+  "min": {
+    "min": "мин"
+  },
+  "repeats": {
+    "repeats": "повтор"
+  },
+  "0 disables automatic refresh": {
+    "0 disables automatic refresh": "0 отключает автообновление"
+  }
+}
