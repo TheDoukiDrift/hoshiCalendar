@@ -21,11 +21,26 @@ DesktopPluginComponent {
     property date selectedDate: new Date()
     property date displayDate: new Date()
 
-    readonly property string layout: pluginData.desktopLayout || "stacked"
-    readonly property int weekStart: parseInt(pluginData.weekStart ?? "1", 10)
-    readonly property bool showDots: pluginData.showEventDots !== false
-    readonly property int agendaDays: Math.max(1, pluginData.agendaDays ?? 7)
-    readonly property real bgOpacity: Math.max(0, Math.min(100, pluginData.backgroundOpacity ?? 60)) / 100
+    // Desktop widgets are always instances. DMS hands them an instance-scoped
+    // pluginService that never forwards pluginDataChanged, and the base
+    // pluginData only carries the per-instance config - so a change in the
+    // plugin settings or in the instance config would go unnoticed. Resolve the
+    // settings ourselves: global plugin settings, overridden by the instance
+    // config, re-read whenever either side changes.
+    property int settingsRevision: 0
+
+    readonly property var settings: {
+        settingsRevision;
+        const global = (pluginId ? SettingsData.getPluginSettingsForPlugin(pluginId) : {}) || {};
+        const local = (instanceData && instanceData.config) ? instanceData.config : {};
+        return Object.assign({}, global, local);
+    }
+
+    readonly property string layout: settings.desktopLayout || "stacked"
+    readonly property int weekStart: parseInt(settings.weekStart ?? "1", 10)
+    readonly property bool showDots: settings.showEventDots !== false
+    readonly property int agendaDays: Math.max(1, settings.agendaDays ?? 7)
+    readonly property real bgOpacity: Math.max(0, Math.min(100, settings.backgroundOpacity ?? 60)) / 100
     readonly property var sourcePalette: [Theme.primary, Theme.tertiary, Theme.secondary, Theme.error, Theme.success]
 
     readonly property bool showGrid: layout !== "agenda"
@@ -74,9 +89,22 @@ DesktopPluginComponent {
 
     Connections {
         target: PluginService
+
         function onGlobalVarChanged(changedId, varName) {
             if (changedId === root.pluginId)
                 root.refreshEvents();
+        }
+
+        function onPluginDataChanged(changedId) {
+            if (changedId === root.pluginId)
+                root.settingsRevision++;
+        }
+    }
+
+    Connections {
+        target: SettingsData
+        function onDesktopWidgetInstancesChanged() {
+            root.settingsRevision++;
         }
     }
 
