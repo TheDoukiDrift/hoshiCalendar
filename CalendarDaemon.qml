@@ -88,19 +88,16 @@ Item {
             return null;
         if (/^webcal:\/\//i.test(s))
             return {
-                cmd: ["curl", "-sfL", "--max-time", "30", s.replace(/^webcal:\/\//i, "https://")],
-                remote: true
+                cmd: [Proc.dmsBin, "dl", "--timeout", "30", s.replace(/^webcal:\/\//i, "https://")]
             };
         if (/^https?:\/\//i.test(s))
             return {
-                cmd: ["curl", "-sfL", "--max-time", "30", s],
-                remote: true
+                cmd: [Proc.dmsBin, "dl", "--timeout", "30", s]
             };
         if (/^file:\/\//i.test(s))
             s = s.replace(/^file:\/\//i, "");
         return {
-            cmd: ["cat", "--", Paths.expandTilde(s)],
-            remote: false
+            cmd: ["cat", "--", Paths.expandTilde(s)]
         };
     }
 

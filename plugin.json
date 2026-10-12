@@ -2,7 +2,7 @@
     "id": "hoshiCalendar",
     "name": "Hoshi Calendar",
     "description": "Calendar desktop widget and bar widget with .ics support (local files and remote/webcal feeds)",
-    "version": "1.3.0",
+    "version": "1.4.0",
     "author": "TheDoukiDrift",
     "type": "composite",
     "capabilities": ["desktop-widget", "dankbar-widget", "calendar", "monitoring"],
@@ -13,7 +13,7 @@
         "desktop": "./DesktopWidget.qml"
     },
     "settings": "./Settings.qml",
-    "requires_dms": ">=1.5.0",
-    "dependencies": ["curl"],
+    "requires_dms": ">=1.6.0",
+    "dependencies": [],
     "permissions": ["settings_read", "settings_write", "process", "network"]
 }

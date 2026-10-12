@@ -24,8 +24,7 @@ single daemon does all the work regardless of how many widgets are on screen.
 
 ## Requirements
 
-- DMS `>= 1.5.0`
-- `curl` (for remote/`webcal://` feeds)
+- DMS `>= 1.6.0` (remote feeds are fetched with the built-in `dms dl`; no `curl` needed).
 
 ## Install
 
